@@ -60,6 +60,7 @@ def upload_redirects(redirects, bucket, remote_keys, dry=False):
 
         if not dry:
             key.set_redirect(location)
+            key.set_acl('public-read')
         print "{2:<6} {0} {1}".format(
           local_key, location, "update" if exists else "new")
 
